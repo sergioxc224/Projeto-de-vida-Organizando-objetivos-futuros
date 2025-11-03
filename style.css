@@ -1,1 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
 
+:root {
+    --fundo-principal: #1A1A2E;
+    --cor-texto: #FFFFFF;
+    --cor-destaque: #00B894; /* Verde Água */
+    --fundo-cartao: #282A40;
+    --sombra-cartao: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: var(--fundo-principal);
+    color: var(--cor-texto);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--fundo-cartao);
+    box-shadow: 0 4px 6px var(--sombra-cartao);
+    margin-bottom: 30px;
+}
+
+.titulo-pagina {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.titulo-pagina span {
+    color: var(--cor-destaque);
+    font-weight: 300;
+}
+
+.container-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.lista-objetivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.cartao-objetivo {
+    background-color: var(--fundo-cartao);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px var(--sombra-cartao);
+    border-top: 5px solid var(--cor-destaque);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cartao-objetivo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 184, 148, 0.4);
+}
+
+.objetivo-titulo {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--cor-destaque);
+    margin-top: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.objetivo-descricao {
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.tempo-restante {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contador-regressivo {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.unidades-tempo {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.unidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    flex-grow: 1;
+}
+
+.numero {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--cor-destaque);
+    line-height: 1;
+}
+
+.label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 600px) {
+    .titulo-pagina {
+        font-size: 2em;
+    }
+
+    .unidades-tempo {
+        justify-content: space-between;
+    }
+
+    .numero {
+        font-size: 2em;
+    }
+}
